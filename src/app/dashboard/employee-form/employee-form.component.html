@@ -1,9 +1,18 @@
+<div class="container-page-registro">
+  <img class="img-registro" src="assets/images/meshaimg.jpeg" alt="img-capa">
+
 <form [formGroup]="registroForm" class="employee-form" (ngSubmit)="onSubmit()">
+  <div class="header-registry">
+    <h1>Bem-vindo à XXZY </h1>
+    <p>Estamos entusiasmados em tê-lo conosco! Registrar-se aqui significa dar o primeiro passo em uma jornada cheia de oportunidades, crescimento e momentos inesquecíveis. Na XXZY, valorizamos cada membro da nossa família e trabalhamos juntos para alcançar o sucesso.
+      Preencha o formulário abaixo e junte-se a nós nesta aventura incrível. Estamos ansiosos para fazer grandes coisas juntos!</p>
+  </div>
+
   <!-- Campo Nome -->
   <mat-form-field appearance="outline" class="employee-form-field">
     <mat-label>Nome</mat-label>
-    <input matInput type="text" id="nome" formControlName="nome">
-    <mat-error *ngIf="registroForm.get('nome')?.invalid && registroForm.get('nome')?.touched">
+    <input matInput type="text" id="name" formControlName="name">
+    <mat-error *ngIf="registroForm.get('name')?.invalid && registroForm.get('name')?.touched">
       Nome é obrigatório e deve ter no máximo 100 caracteres.
     </mat-error>
   </mat-form-field>
@@ -26,21 +35,23 @@
     </mat-error>
   </mat-form-field>
   <!-- Campo Celular -->
-  <!-- ... Similar ao campo nome -->
+
   <mat-form-field appearance="outline" class="employee-form-field">
     <mat-label>Celular</mat-label>
-    <input matInput type="text" id="celular" formControlName="celular">
-    <mat-error *ngIf="registroForm.get('celular')?.invalid && registroForm.get('celular')?.touched">
+    <input matInput type="text" id="phone" formControlName="phone">
+    <mat-error *ngIf="registroForm.get('phone')?.invalid && registroForm.get('phone')?.touched">
       Insira um numero de telefone valido
     </mat-error>
   </mat-form-field>
   <!-- Campo Conhecimentos -->
-  <div>
-    <mat-radio-group aria-label="Select an option" id="skills" formControlName="skills">
-      <mat-radio-button value="1">Option 1</mat-radio-button>
-      <mat-radio-button value="2">Option 2</mat-radio-button>
-    </mat-radio-group>
-  </div>
-  
-  <button type="submit" [disabled]="registroForm.invalid">Registrar</button>
+  <p>Selecione suas Skills (Até 3 opções)</p>
+  <div formArrayName="skills" class="skills-list">
+    <div *ngFor="let skill of skillsOptions; let i = index">
+        <mat-checkbox [value]="skill" (change)="onSkillChange($event)">
+            {{ skill }}
+        </mat-checkbox>
+    </div>
+</div>
+  <button class="btn-registro" type="submit" [disabled]="registroForm.invalid">Registrar</button>
 </form>
+</div>

@@ -27,6 +27,10 @@ export class EmployeeService {
     return this.httpClient.patch<Employee>(`${this.API_URL}/${id}/status`, { status });
   }
 
+  // Método para buscar lista de skills da API para o formulario de registro
+  getSkillsOptions(): Observable<string[]> {
+    return this.httpClient.get<string[]>('http://localhost:3000/skills');
+}
   // ... Você pode adicionar outros métodos conforme necessário
 
 }

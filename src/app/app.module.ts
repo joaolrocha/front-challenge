@@ -2,7 +2,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
-import { MatRadioModule } from '@angular/material/radio';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
@@ -27,7 +27,7 @@ import { EmployeeListComponent } from './dashboard/employee-list/employee-list.c
     ReactiveFormsModule,
     MatInputModule,
     BrowserAnimationsModule,
-    MatRadioModule
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]

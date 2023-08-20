@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatCheckboxChange } from '@angular/material/checkbox';
 import { EmployeeService } from 'src/service/employee.service';
 
 @Component({
@@ -15,14 +16,25 @@ export class EmployeeFormComponent implements OnInit {
     private employeeService: EmployeeService
     ) {}
 
+    // armazena a lista de skills que vem da api
+    skillsOptions: string[] = [];
+
+
   ngOnInit(): void {
+    this.employeeService.getSkillsOptions().subscribe((skills: string[]) => {
+      this.skillsOptions = skills;
+  });
       this.registroForm = this.fb.group({
-        nome: ['', [Validators.required, Validators.maxLength(100)]],
+        name: ['', [Validators.required, Validators.maxLength(100)]],
         email: ['', [Validators.required, Validators.email, Validators.maxLength(100)]],
         cpf: ['', [Validators.required, Validators.pattern(/^\d{3}\.\d{3}\.\d{3}-\d{2}$/)]],
-        celular: ['', Validators.pattern(/^\(\d{2}\)\s\d{5}-\d{4}$/)],
-        skills: ['',[Validators.required, this.skillsValidator]]
+        phone: ['', Validators.pattern(/^\(\d{2}\)\s\d{5}-\d{4}$/)],
+        skills: this.fb.array([], [Validators.required, this.skillsValidator])
       });
+  }
+
+  skillsList() {
+    this.employeeService.getSkillsOptions
   }
 
   skillsValidator(control: any): {[key: string]: boolean} | null {
@@ -33,6 +45,17 @@ export class EmployeeFormComponent implements OnInit {
       return {'invalidLength' : true}
     }
   }
+
+  onSkillChange(event: MatCheckboxChange) {
+    const skillsFormArray = this.registroForm.controls['skills'] as FormArray;
+  
+    if (event.checked) {
+        skillsFormArray.push(new FormControl(event.source.value));
+    } else {
+        const index = skillsFormArray.controls.findIndex(control => control.value === event.source.value);
+        skillsFormArray.removeAt(index);
+    }
+}
 
   onSubmit(): void {
     if (this.registroForm.valid) {
