@@ -1,1 +1,46 @@
-<p>employee-form works!</p>
+<form [formGroup]="registroForm" class="employee-form" (ngSubmit)="onSubmit()">
+  <!-- Campo Nome -->
+  <mat-form-field appearance="outline" class="employee-form-field">
+    <mat-label>Nome</mat-label>
+    <input matInput type="text" id="nome" formControlName="nome">
+    <mat-error *ngIf="registroForm.get('nome')?.invalid && registroForm.get('nome')?.touched">
+      Nome é obrigatório e deve ter no máximo 100 caracteres.
+    </mat-error>
+  </mat-form-field>
+  
+  <!-- Campo Email -->
+  <mat-form-field appearance="outline" class="employee-form-field">
+    <mat-label>Email</mat-label>
+    <input matInput type="text" id="email" formControlName="email">
+    <mat-error *ngIf="registroForm.get('email')?.invalid && registroForm.get('email')?.touched">
+      Email é obrigatório para o cadastro
+    </mat-error>
+  </mat-form-field>
+
+  <!-- Campo CPF -->
+  <mat-form-field appearance="outline" class="employee-form-field">
+    <mat-label>CPF</mat-label>
+    <input matInput type="text" id="cpf" formControlName="cpf">
+    <mat-error *ngIf="registroForm.get('cpf')?.invalid && registroForm.get('cpf')?.touched">
+      Insira um cpf valido!
+    </mat-error>
+  </mat-form-field>
+  <!-- Campo Celular -->
+  <!-- ... Similar ao campo nome -->
+  <mat-form-field appearance="outline" class="employee-form-field">
+    <mat-label>Celular</mat-label>
+    <input matInput type="text" id="celular" formControlName="celular">
+    <mat-error *ngIf="registroForm.get('celular')?.invalid && registroForm.get('celular')?.touched">
+      Insira um numero de telefone valido
+    </mat-error>
+  </mat-form-field>
+  <!-- Campo Conhecimentos -->
+  <div>
+    <mat-radio-group aria-label="Select an option" id="skills" formControlName="skills">
+      <mat-radio-button value="1">Option 1</mat-radio-button>
+      <mat-radio-button value="2">Option 2</mat-radio-button>
+    </mat-radio-group>
+  </div>
+  
+  <button type="submit" [disabled]="registroForm.invalid">Registrar</button>
+</form>

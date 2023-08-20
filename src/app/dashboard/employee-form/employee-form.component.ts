@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { EmployeeService } from 'src/service/employee.service';
 
 @Component({
   selector: 'app-employee-form',
@@ -9,7 +10,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class EmployeeFormComponent implements OnInit {
   registroForm!: FormGroup;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder,
+    private employeeService: EmployeeService
+    ) {}
 
   ngOnInit(): void {
       this.registroForm = this.fb.group({
@@ -27,6 +31,27 @@ export class EmployeeFormComponent implements OnInit {
       return null
     } else {
       return {'invalidLength' : true}
+    }
+  }
+
+  onSubmit(): void {
+    if (this.registroForm.valid) {
+      const formData = this.registroForm.value;
+      
+      // Aqui você pode chamar seu serviço para enviar os dados ao backend.
+      this.employeeService.createEmployee(formData).subscribe(
+        response => {
+          // Trate a resposta do servidor aqui, por exemplo, mostrar uma mensagem de sucesso.
+          alert('Funcionário registrado com sucesso!');
+        },
+        error => {
+          // Trate erros aqui, por exemplo, mostrar uma mensagem de erro.
+          alert('Ocorreu um erro ao registrar o funcionário.');
+        }
+      );
+    } else {
+      // Trate erros de validação aqui.
+      alert('Por favor, corrija os erros no formulário.');
     }
   }
 }
