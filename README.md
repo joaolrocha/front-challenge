@@ -1,27 +1,58 @@
-# FrontEnd
+## **Sistema de Gestão de Empregados**
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
+Este projeto foi desenvolvido para gerenciar o cadastro de novos empregados. O sistema permite que administradores validem ou rejeitem as inscrições dos empregados com base nas informações fornecidas.
 
-## Development server
+### 🚀 **Tecnologias Utilizadas**
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Este projeto foi desenvolvido com as seguintes tecnologias:
 
-## Code scaffolding
+- [Angular](https://angular.io/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Material Design (Angular Material)](https://material.angular.io/)
+- (adicione outras tecnologias, bibliotecas ou frameworks utilizados aqui)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### 🎨 **Design**
 
-## Build
+A UI foi construída usando o Angular Material, proporcionando uma experiência responsiva e amigável ao usuário.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### 🛠 **Instruções de Instalação**
 
-## Running unit tests
+1. Clone o repositório:
+   ```bash
+   git clone link-do-repositório
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2. Mude para o diretorio do projeto
+  ```bash
+  cd nome-do-diretorio
 
-## Running end-to-end tests
+3. Instale as dependências:
+   ```bash
+  npm install
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+4. Execute a aplicação:
+   ```bash
+  ng serve
 
-## Further help
+  Abra seu navegador e acesse [http://localhost:4200/](http://localhost:4200/).
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### 📖 **Funcionalidades**
+
+- Cadastro de novos empregados
+- Validação de CPF
+- Administração: Funcionalidade para validação/rejeição de empregados
+
+### 🤝 **Contribuições**
+
+As pull requests são bem-vindas. Para mudanças maiores, abra uma issue primeiro para discutir o que você gostaria de mudar.
+
+### 🔗 **Links Úteis**
+
+- [Documentação do Angular](https://angular.io/docs)
+
+### 📌 **Autor**
+
+- [LinkedIn](https://www.linkedin.com/in/joaolrocha07/)
+
+### 🙏 **Agradecimentos**
+
+Gostaria de agradecer pela oportunidade de desenvolver este projeto. Foi uma experiência enriquecedora e estou ansioso para futuros desafios!

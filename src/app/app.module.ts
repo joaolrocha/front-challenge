@@ -15,6 +15,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { DatePipe } from '@angular/common';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +34,7 @@ import { DatePipe } from '@angular/common';
     MatCheckboxModule,
     MatTableModule,
     MatPaginatorModule,
-    DatePipe
+    DatePipe,
   ],
   providers: [],
   bootstrap: [AppComponent]
