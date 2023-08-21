@@ -9,7 +9,6 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 - [Angular](https://angular.io/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Material Design (Angular Material)](https://material.angular.io/)
-- (adicione outras tecnologias, bibliotecas ou frameworks utilizados aqui)
 
 ### 🎨 **Design**
 
