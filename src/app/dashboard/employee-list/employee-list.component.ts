@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 import { Employee } from 'src/models/employee.model';
 import { EmployeeService } from 'src/service/employee.service';
-import { Router } from '@angular/router';
 import { EmployeeStateService } from '../employee-state.service';
 
 @Component({
@@ -13,7 +13,7 @@ import { EmployeeStateService } from '../employee-state.service';
 })
 
 export class EmployeeListComponent implements OnInit {
-  dataSource= new MatTableDataSource<Employee>([]);
+  dataSource = new MatTableDataSource<Employee>([]);
   displayedColumns: string[] = [
     'id', 'name', 'email', 'cpf', 'phone', 'skills', 'status', 'validationDate'
   ];
@@ -22,9 +22,9 @@ export class EmployeeListComponent implements OnInit {
 
   constructor(
     private employeeService: EmployeeService,
-    private router: Router ,
-    private employeeStateService: EmployeeStateService ,
-    ) {}
+    private router: Router,
+    private employeeStateService: EmployeeStateService,
+  ) { }
 
   ngOnInit(): void {
     this.employeeService.getAllEmployees().subscribe(employees => {
@@ -39,7 +39,7 @@ export class EmployeeListComponent implements OnInit {
   onRowClicked(employee: Employee) {
     this.employeeStateService.setSelectedEmployee(employee);
     this.router.navigate([`${employee.name}/validar`]);
-}
-  
+  }
+
 }
 

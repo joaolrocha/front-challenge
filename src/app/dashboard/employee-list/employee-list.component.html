@@ -51,7 +51,7 @@
     <!-- Validation Date Column -->
     <ng-container matColumnDef="validationDate">
       <th mat-header-cell *matHeaderCellDef> Data de Validação </th>
-      <td mat-cell *matCellDef="let employee"> {{employee.validationDate}} </td>
+      <td mat-cell *matCellDef="let employee"> {{ employee.validationDate ? (employee.validationDate | date: 'dd/MM/yyyy') : 'Data não fornecida' }}   </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

@@ -13,15 +13,15 @@
       </p>
       <p><strong>Status:</strong> {{ selectedEmployee?.status }}</p>
       <p>
-        <strong>Data de Validação:</strong> {{ selectedEmployee?.validationDate }}
+        <strong>Data de Validação:</strong> {{ selectedEmployee?.validationDate ? (selectedEmployee.validationDate | date: 'dd/MM/yyyy') : 'Data não fornecida' }}
       </p>
     </div>
   
     <!-- Aqui você pode colocar seus botões de ação -->
     <div class="employee-actions">
-      <!-- Exemplo de botão -->
-      <button>Validar</button>
+      <button (click)="onValidateButtonClick()">Validar</button>
     </div>
+  
   </div>
   
   

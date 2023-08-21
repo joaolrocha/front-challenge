@@ -13,6 +13,7 @@ import { EmployeeFormComponent } from './dashboard/employee-form/employee-form.c
 import { EmployeeListComponent } from './dashboard/employee-list/employee-list.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     BrowserAnimationsModule,
     MatCheckboxModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    DatePipe
   ],
   providers: [],
   bootstrap: [AppComponent]
