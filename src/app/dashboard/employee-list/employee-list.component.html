@@ -3,6 +3,11 @@
 
 
   <div class="employee-card">
+    <div class="search-container" style="display: flex;">
+      <mat-form-field class="search-field">
+        <input matInput (keyup)="applyFilter($event)" placeholder="Pesquisar" aria-label="Pesquisar">
+      </mat-form-field>
+    </div>
   <table mat-table [dataSource]="dataSource">
 
     <!-- ID Column -->
@@ -55,7 +60,7 @@
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="onRowClicked(row)"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="onRowClicked(row)" style="cursor: pointer;"></tr>
   </table>
   <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons></mat-paginator>
 </div>

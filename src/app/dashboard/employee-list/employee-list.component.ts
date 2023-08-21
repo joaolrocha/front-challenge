@@ -41,5 +41,15 @@ export class EmployeeListComponent implements OnInit {
     this.router.navigate([`${employee.name}/validar`]);
   }
 
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  
+    // Se o dataSource tiver um paginador, ele deverá ser atualizado também
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
+  }
+
 }
 
