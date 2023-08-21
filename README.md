@@ -18,20 +18,16 @@ A UI foi construída usando o Angular Material, proporcionando uma experiência 
 
 Antes de tudo, certifique-se de que a [API](https://github.com/joaolrocha/api-challenge) está rodando. Lá você encontrará as instruções para baixar e rodar a api!
 
-1. Clone o repositório:
-  
-   git clone link-do-repositório
+1. Clone o repositório
 
 2. Mude para o diretorio do projeto
-
-  cd nome-do-diretorio
 
 3. Instale as dependências:
  
   npm install
 
 4. Execute a aplicação:
-  
+
   ng serve
 
 Abra seu navegador e acesse [http://localhost:4200/](http://localhost:4200/).
