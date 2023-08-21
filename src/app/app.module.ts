@@ -11,6 +11,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { EmployeeDetailComponent } from './dashboard/employee-detail/employee-detail.component';
 import { EmployeeFormComponent } from './dashboard/employee-form/employee-form.component';
 import { EmployeeListComponent } from './dashboard/employee-list/employee-list.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { EmployeeListComponent } from './dashboard/employee-list/employee-list.c
     ReactiveFormsModule,
     MatInputModule,
     BrowserAnimationsModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatTableModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
