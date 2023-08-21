@@ -1,1 +1,29 @@
-<p>employee-detail works!</p>
+<div class="container-page-details">
+  <img class="img-registro" src="assets/images/meshaimg.jpeg" alt="img-capa">
+
+  <div class="employee-card">
+    <h2 class="employee-name">{{ selectedEmployee?.name }}</h2>
+    <div class="employee-details">
+      <p><strong>ID:</strong> {{ selectedEmployee?.id }}</p>
+      <p><strong>Email:</strong> {{ selectedEmployee?.email }}</p>
+      <p><strong>CPF:</strong> {{ selectedEmployee?.cpf }}</p>
+      <p><strong>Telefone:</strong> {{ selectedEmployee?.phone }}</p>
+      <p>
+        <strong>Habilidades:</strong> {{ selectedEmployee?.skills.join(', ') }}
+      </p>
+      <p><strong>Status:</strong> {{ selectedEmployee?.status }}</p>
+      <p>
+        <strong>Data de Validação:</strong> {{ selectedEmployee?.validationDate }}
+      </p>
+    </div>
+  
+    <!-- Aqui você pode colocar seus botões de ação -->
+    <div class="employee-actions">
+      <!-- Exemplo de botão -->
+      <button>Validar</button>
+    </div>
+  </div>
+  
+  
+
+</div>

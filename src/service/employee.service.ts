@@ -7,6 +7,13 @@ import { Employee } from '../models/employee.model'; // Supondo que você tenha 
   providedIn: 'root'
 })
 export class EmployeeService {
+  employee$: any;
+  setSelectedEmployee(employee: Employee) {
+    throw new Error('Method not implemented.');
+  }
+  getEmployeeByName(name: string) {
+    throw new Error('Method not implemented.');
+  }
 
   private readonly API_URL = 'http://localhost:3000/employee';
 
@@ -31,6 +38,9 @@ export class EmployeeService {
   getSkillsOptions(): Observable<string[]> {
     return this.httpClient.get<string[]>('http://localhost:3000/skills');
 }
-  // ... Você pode adicionar outros métodos conforme necessário
+  // Método para buscar um employee by id
+  getEmployeeById(id: number) : Observable<Employee> {
+    return this.httpClient.get<Employee>(`${this.API_URL}/${id}`);
+  } 
 
 }

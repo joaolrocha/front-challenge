@@ -1,16 +1,39 @@
-.container-page-registro{
-    // background-color: #F0EEEE;
+.container-page-registro {
+  background-color: #F5F5F5;
   display: flex;
   flex-direction: column;
   width: 100%;
   align-items: center;
   justify-content: center;
-  // height: 100%;
   gap: 1rem;
 }
 
-.img-registro{
+.img-registro {
   width: 100%;
   object-fit: cover;
   height: 100%;
+}
+
+.employee-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80%; 
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: #ffffff;
+  position: relative;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-spacing: 0 10px; // Espaçamento entre as linhas da tabela
+}
+
+th, td {
+  padding: 8px 12px; // Espaçamento interno nas células da tabela
+  text-align: left; // Alinhamento do texto nas células
 }

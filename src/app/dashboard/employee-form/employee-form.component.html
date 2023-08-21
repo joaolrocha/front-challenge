@@ -1,12 +1,13 @@
 <div class="container-page-registro">
   <img class="img-registro" src="assets/images/meshaimg.jpeg" alt="img-capa">
 
-<form [formGroup]="registroForm" class="employee-form" (ngSubmit)="onSubmit()">
-  <div class="header-registry">
+<div class="employee-card">
+ <div class="header-registry">
     <h1>Bem-vindo à XXZY </h1>
     <p>Estamos entusiasmados em tê-lo conosco! Registrar-se aqui significa dar o primeiro passo em uma jornada cheia de oportunidades, crescimento e momentos inesquecíveis. Na XXZY, valorizamos cada membro da nossa família e trabalhamos juntos para alcançar o sucesso.
       Preencha o formulário abaixo e junte-se a nós nesta aventura incrível. Estamos ansiosos para fazer grandes coisas juntos!</p>
   </div>
+<form [formGroup]="registroForm" class="employee-form" (ngSubmit)="onSubmit()">
 
   <!-- Campo Nome -->
   <mat-form-field appearance="outline" class="employee-form-field">
@@ -54,4 +55,5 @@
 </div>
   <button class="btn-registro" type="submit" [disabled]="registroForm.invalid">Registrar</button>
 </form>
+</div>
 </div>
