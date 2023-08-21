@@ -30,7 +30,7 @@
   <!-- Campo CPF -->
   <mat-form-field appearance="outline" class="employee-form-field">
     <mat-label>CPF</mat-label>
-    <input matInput type="text" id="cpf" formControlName="cpf">
+    <input matInput type="text" id="cpf" formControlName="cpf" (input)="onCPFInput($event)">
     <mat-error *ngIf="registroForm.get('cpf')?.invalid && registroForm.get('cpf')?.touched">
       Insira um cpf valido!
     </mat-error>
@@ -39,7 +39,7 @@
 
   <mat-form-field appearance="outline" class="employee-form-field">
     <mat-label>Celular</mat-label>
-    <input matInput type="text" id="phone" formControlName="phone">
+    <input matInput type="text" id="phone" formControlName="phone" (input)="onPhoneInput($event)">
     <mat-error *ngIf="registroForm.get('phone')?.invalid && registroForm.get('phone')?.touched">
       Insira um numero de telefone valido
     </mat-error>

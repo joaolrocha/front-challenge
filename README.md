@@ -16,7 +16,7 @@ A UI foi construída usando o Angular Material, proporcionando uma experiência 
 
 ### 🛠 **Instruções de Instalação**
 
-Antes de tudo, certifique-se de que a [API](link-do-repositório-da-api) está rodando. Lá você encontrará as instruções para baixar e rodar a api!
+Antes de tudo, certifique-se de que a [API](https://github.com/joaolrocha/api-challenge) está rodando. Lá você encontrará as instruções para baixar e rodar a api!
 
 1. Clone o repositório:
   

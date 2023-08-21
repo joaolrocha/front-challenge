@@ -61,20 +61,50 @@ export class EmployeeFormComponent implements OnInit {
     if (this.registroForm.valid) {
       const formData = this.registroForm.value;
       
-      // Aqui você pode chamar seu serviço para enviar os dados ao backend.
       this.employeeService.createEmployee(formData).subscribe(
         response => {
-          // Trate a resposta do servidor aqui, por exemplo, mostrar uma mensagem de sucesso.
           alert('Funcionário registrado com sucesso!');
         },
         error => {
-          // Trate erros aqui, por exemplo, mostrar uma mensagem de erro.
           alert('Ocorreu um erro ao registrar o funcionário.');
         }
       );
     } else {
-      // Trate erros de validação aqui.
       alert('Por favor, corrija os erros no formulário.');
     }
   }
+
+  maskCPF(value: string): string {
+    let newValue = value.replace(/\D/g, '');
+    if (newValue.length <= 3) {
+      return newValue;
+    }
+    if (newValue.length <= 6) {
+      return `${newValue.substring(0, 3)}.${newValue.substring(3)}`;
+    }
+    if (newValue.length <= 9) {
+      return `${newValue.substring(0, 3)}.${newValue.substring(3, 3)}.${newValue.substring(6)}`;
+    }
+    return `${newValue.substring(0, 3)}.${newValue.substring(3, 3)}.${newValue.substring(6, 3)}-${newValue.substring(9, 2)}`;
+  }
+  
+  maskPhone(value: string): string {
+    let newValue = value.replace(/\D/g, '');
+    if (newValue.length <= 2) {
+      return `(${newValue}`;
+    }
+    if (newValue.length <= 6) {
+      return `(${newValue.substring(0, 2)}) ${newValue.substring(2)}`;
+    }
+    return `(${newValue.substring(0, 2)}) ${newValue.substring(2, 5)}-${newValue.substring(7, 4)}`;
+  }
+  
+  onCPFInput(event: any) {
+    event.target.value = this.maskCPF(event.target.value);
+  }
+  
+  onPhoneInput(event: any) {
+    event.target.value = this.maskPhone(event.target.value);
+  }
+  
 }

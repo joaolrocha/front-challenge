@@ -6,10 +6,14 @@ import { EmployeeDetailComponent } from './dashboard/employee-detail/employee-de
 
 const routes: Routes = [
   {
+    path: '',
+    redirectTo: '/registros',
+    pathMatch: 'full'
+  },
+  {
     path: ':nome/registrar',
     component: EmployeeFormComponent
   },
-
   {
     path: 'registros',
     component: EmployeeListComponent

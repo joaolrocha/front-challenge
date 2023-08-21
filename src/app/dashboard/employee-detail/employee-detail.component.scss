@@ -49,3 +49,19 @@ height: 100%;
 .employee-actions {
   text-align: center;
 }
+
+.btn-details {
+  width: 50%;
+  height: 52px;
+  border-radius: 24px;
+  background-color: #5d3fc5;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #492ba0; // Cor um pouco mais escura para o hover
+  }
+}
